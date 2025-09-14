@@ -1,0 +1,1067 @@
+{
+  "datasets": [
+    {
+      "name": "29c09d06",
+      "displayName": "sales_dashboard_main",
+      "queryLines": [
+        "select * from workspace.ecommerce_dashboards.sales_dashboard_main"
+      ],
+      "catalog": "workspace",
+      "schema": "ecommerce_dashboards"
+    },
+    {
+      "name": "a82d68b1",
+      "displayName": "customer_insights_dashboard",
+      "queryLines": [
+        "SELECT * FROM workspace.ecommerce_dashboards.customer_insights_dashboard"
+      ]
+    },
+    {
+      "name": "96d0a598",
+      "displayName": "executive_summary_dashboard",
+      "queryLines": [
+        "SELECT * FROM workspace.ecommerce_dashboards.executive_summary_dashboard"
+      ]
+    },
+    {
+      "name": "012e5205",
+      "displayName": "product_performance_dashboard",
+      "queryLines": [
+        "SELECT * FROM workspace.ecommerce_dashboards.product_performance_dashboard"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "2780683d",
+      "displayName": "SALES_DASHBOARD_MAIN",
+      "layout": [
+        {
+          "widget": {
+            "name": "c8efd4ec",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "29c09d06",
+                  "fields": [
+                    {
+                      "name": "month_year",
+                      "expression": "`month_year`"
+                    },
+                    {
+                      "name": "sum(monthly_revenue)",
+                      "expression": "SUM(`monthly_revenue`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "month_year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "month_year"
+                },
+                "y": {
+                  "fieldName": "sum(monthly_revenue)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of monthly_revenue"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Revenue Trends"
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 1
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 2
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "0d78e918",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "29c09d06",
+                  "fields": [
+                    {
+                      "name": "sum(category_revenue)",
+                      "expression": "SUM(`category_revenue`)"
+                    },
+                    {
+                      "name": "category",
+                      "expression": "`category`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "sum(category_revenue)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of category_revenue"
+                },
+                "color": {
+                  "fieldName": "category",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "category"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Category Comparison"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "5d785dbe",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "29c09d06",
+                  "fields": [
+                    {
+                      "name": "month_year",
+                      "expression": "`month_year`"
+                    },
+                    {
+                      "name": "sum(revenue_growth_pct)",
+                      "expression": "SUM(`revenue_growth_pct`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "month_year",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "month_year"
+                },
+                "y": {
+                  "fieldName": "sum(revenue_growth_pct)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of revenue_growth_pct"
+                }
+              },
+              "frame": {
+                "title": "Revenue Growth",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "3f700768",
+            "multilineTextboxSpec": {
+              "lines": [
+                "This SALES_DASHBOARD_MAIN offers a comprehensive visual summary of business performance, focusing on revenue, growth, and category insights. \n",
+                "It presents monthly revenue trends for the past year, allowing quick identification of periods of peak and low sales activity. \n",
+                "The dashboard also features a category-wise revenue breakdown, highlighting which product segments—such as Electronics, Home, Sports, Fashion, and Books—are driving the largest contributions to overall sales.\n",
+                "In addition, the revenue growth chart illustrates fluctuations in growth percentage month over month, helping business leaders monitor momentum and spot emerging opportunities or challenges.\n",
+                "\n",
+                "By consolidating these critical sales metrics, the dashboard provides valuable guidance for executives and sales managers to track targets, assess profitability, and make informed decisions for strategic planning and business development."
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 12,
+            "width": 6,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "13afb810",
+      "displayName": "CUSTOMER_INSIGHTS_DASHBOARD",
+      "layout": [
+        {
+          "widget": {
+            "name": "6582c1fc",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "a82d68b1",
+                  "fields": [
+                    {
+                      "name": "sum(customer_percentage)",
+                      "expression": "SUM(`customer_percentage`)"
+                    },
+                    {
+                      "name": "customer_tier",
+                      "expression": "`customer_tier`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "sum(customer_percentage)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of customer_percentage"
+                },
+                "color": {
+                  "fieldName": "customer_tier",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "customer_tier"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Customer Segmentation"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "718bfdc6",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "a82d68b1",
+                  "fields": [
+                    {
+                      "name": "sum(customer_count)",
+                      "expression": "SUM(`customer_count`)"
+                    },
+                    {
+                      "name": "monthly(acquisition_month)",
+                      "expression": "DATE_TRUNC(\"MONTH\", `acquisition_month`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "funnel",
+              "encodings": {
+                "x": {
+                  "fieldName": "sum(customer_count)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of customer_count"
+                },
+                "y": {
+                  "fieldName": "monthly(acquisition_month)",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "acquisition_month"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Customer Journey"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "59138138",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "a82d68b1",
+                  "fields": [
+                    {
+                      "name": "countdistinct(revenue_percentage)",
+                      "expression": "COUNT(DISTINCT `revenue_percentage`)"
+                    },
+                    {
+                      "name": "customer_region",
+                      "expression": "`customer_region`"
+                    },
+                    {
+                      "name": "sum(customer_count)",
+                      "expression": "SUM(`customer_count`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "countdistinct(revenue_percentage)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Count of Unique revenue_percentage"
+                },
+                "color": {
+                  "fieldName": "customer_region",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "customer_region"
+                },
+                "extra": [
+                  {
+                    "fieldName": "sum(customer_count)",
+                    "displayName": "Sum of customer_count"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Regional Distribution"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "380a8964",
+            "multilineTextboxSpec": {
+              "lines": [
+                "This dashboard delivers an in-depth analysis of sales performance, featuring visualizations for monthly revenue, revenue growth trends, and sales distribution by product category. The bar chart enables quick monitoring of monthly sales figures, making it easy to assess periods of strong or weak performance throughout the year. The donut chart breaks down category revenues, highlighting which segments (such as Electronics, Home, Sports, Fashion, and Books) are driving the most income. Additionally, the revenue growth chart tracks percentage changes each month, helping users identify underlying trends and momentum shifts in business results.\n",
+                "\n",
+                "Designed for sales leaders and decision-makers, the dashboard brings key business metrics onto a single page, supporting faster, data-driven insights and more informed strategic planning.\n",
+                "\n"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 12,
+            "width": 6,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "c5b90487",
+      "displayName": "PRODUCT_PERFORMANCE_DASHBOARD",
+      "layout": [
+        {
+          "widget": {
+            "name": "9e377b20",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "012e5205",
+                  "fields": [
+                    {
+                      "name": "sum(product_revenue)",
+                      "expression": "SUM(`product_revenue`)"
+                    },
+                    {
+                      "name": "product_name",
+                      "expression": "`product_name`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "sum(product_revenue)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of product_revenue"
+                },
+                "y": {
+                  "fieldName": "product_name",
+                  "scale": {
+                    "type": "categorical",
+                    "sort": {
+                      "by": "x-reversed"
+                    }
+                  },
+                  "displayName": "product_name"
+                },
+                "label": {
+                  "show": false
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Top Products"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "b7f7a311",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "012e5205",
+                  "fields": [
+                    {
+                      "name": "category",
+                      "expression": "`category`"
+                    },
+                    {
+                      "name": "performance_tier",
+                      "expression": "`performance_tier`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "heatmap",
+              "encodings": {
+                "x": {
+                  "fieldName": "category",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "category"
+                },
+                "y": {
+                  "fieldName": "performance_tier",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "performance_tier"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Category vs Performance"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "dff1179c",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "012e5205",
+                  "fields": [
+                    {
+                      "name": "sum(product_revenue)",
+                      "expression": "SUM(`product_revenue`)"
+                    },
+                    {
+                      "name": "product_name",
+                      "expression": "`product_name`"
+                    },
+                    {
+                      "name": "units_sold",
+                      "expression": "`units_sold`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "heatmap",
+              "encodings": {
+                "x": {
+                  "fieldName": "product_name",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "axis": {
+                    "labelAngle": 0
+                  },
+                  "displayName": "product_name"
+                },
+                "y": {
+                  "fieldName": "units_sold",
+                  "scale": {
+                    "type": "quantitative",
+                    "domain": {
+                      "min": 600
+                    },
+                    "reverse": false
+                  },
+                  "axis": {
+                    "hideLabels": false
+                  },
+                  "displayName": "units_sold"
+                },
+                "color": {
+                  "fieldName": "sum(product_revenue)",
+                  "scale": {
+                    "type": "quantitative",
+                    "colorRamp": {
+                      "mode": "scheme",
+                      "scheme": "rainbow"
+                    },
+                    "reverse": true
+                  },
+                  "displayName": "Sum of product_revenue"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Product Hierarchy"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "dee0cc87",
+            "multilineTextboxSpec": {
+              "lines": [
+                "Product Performance Dashboard Description\n",
+                "The PRODUCT_PERFORMANCE_DASHBOARD offers a comprehensive view of how products are performing across the business, combining multiple visual analytics for clear and actionable insights. The horizontal bar charts rank products by revenue, with color coding to quickly identify top, good, and low performers—making it easy to spot high-impact items and areas needing attention. The heatmaps analyze category strength, showing the interplay between product category and performance tier via color intensity; this is ideal for uncovering strong and weak product segments within each category. Treemaps further break down the hierarchy, visualizing units sold (rectangle size) and product revenue (color intensity), with groupings by category and product name, highlighting distribution and financial contribution among product lines.\n",
+                "\n",
+                "By integrating these views, the dashboard supports data-driven decision making, helping sales leaders, product managers, and executives tailor strategy, optimize resources, and boost overall product success.\n",
+                "\n"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 12,
+            "width": 6,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "4e8a5157",
+      "displayName": "EXECUTIVE_SUMMARY_DASHBOARD",
+      "layout": [
+        {
+          "widget": {
+            "name": "9a3347fd",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "96d0a598",
+                  "fields": [
+                    {
+                      "name": "kpi_name",
+                      "expression": "`kpi_name`"
+                    },
+                    {
+                      "name": "target_value",
+                      "expression": "`target_value`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 1,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "kpi_name",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "string",
+                    "displayAs": "string",
+                    "visible": true,
+                    "order": 100000,
+                    "title": "kpi_name",
+                    "allowSearch": false,
+                    "alignContent": "center",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "kpi_name"
+                  },
+                  {
+                    "fieldName": "target_value",
+                    "numberFormat": "0",
+                    "booleanValues": [
+                      "false",
+                      "true"
+                    ],
+                    "imageUrlTemplate": "{{ @ }}",
+                    "imageTitleTemplate": "{{ @ }}",
+                    "imageWidth": "",
+                    "imageHeight": "",
+                    "linkUrlTemplate": "{{ @ }}",
+                    "linkTextTemplate": "{{ @ }}",
+                    "linkTitleTemplate": "{{ @ }}",
+                    "linkOpenInNewTab": true,
+                    "type": "integer",
+                    "displayAs": "number",
+                    "visible": true,
+                    "order": 100003,
+                    "title": "target_value",
+                    "allowSearch": false,
+                    "alignContent": "center",
+                    "allowHTML": false,
+                    "highlightLinks": false,
+                    "useMonospaceFont": false,
+                    "preserveWhitespace": false,
+                    "displayName": "target_value"
+                  }
+                ]
+              },
+              "invisibleColumns": [
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "current_value",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100001,
+                  "title": "current_value",
+                  "allowSearch": false,
+                  "alignContent": "center",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "previous_value",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100002,
+                  "title": "previous_value",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "period_growth_pct",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100004,
+                  "title": "period_growth_pct",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "numberFormat": "0.00",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "target_achievement_pct",
+                  "type": "float",
+                  "displayAs": "number",
+                  "order": 100005,
+                  "title": "target_achievement_pct",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "performance_status",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100006,
+                  "title": "performance_status",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "trend_direction",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100007,
+                  "title": "trend_direction",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "dateTimeFormat": "DD/MM/YYYY",
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "report_date",
+                  "type": "date",
+                  "displayAs": "datetime",
+                  "order": 100008,
+                  "title": "report_date",
+                  "allowSearch": false,
+                  "alignContent": "right",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                },
+                {
+                  "booleanValues": [
+                    "false",
+                    "true"
+                  ],
+                  "imageUrlTemplate": "{{ @ }}",
+                  "imageTitleTemplate": "{{ @ }}",
+                  "imageWidth": "",
+                  "imageHeight": "",
+                  "linkUrlTemplate": "{{ @ }}",
+                  "linkTextTemplate": "{{ @ }}",
+                  "linkTitleTemplate": "{{ @ }}",
+                  "linkOpenInNewTab": true,
+                  "name": "time_period",
+                  "type": "string",
+                  "displayAs": "string",
+                  "order": 100009,
+                  "title": "time_period",
+                  "allowSearch": false,
+                  "alignContent": "left",
+                  "allowHTML": false,
+                  "highlightLinks": false,
+                  "useMonospaceFont": false,
+                  "preserveWhitespace": false
+                }
+              ],
+              "allowHTMLByDefault": false,
+              "itemsPerPage": 25,
+              "paginationSize": "default",
+              "condensed": true,
+              "withRowNumber": false,
+              "frame": {
+                "title": "Executive Metrics",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "c604ae3d",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "96d0a598",
+                  "fields": [
+                    {
+                      "name": "target_achievement_pct",
+                      "expression": "`target_achievement_pct`"
+                    },
+                    {
+                      "name": "performance_status",
+                      "expression": "`performance_status`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "pie",
+              "encodings": {
+                "angle": {
+                  "fieldName": "target_achievement_pct",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "target_achievement_pct"
+                },
+                "color": {
+                  "fieldName": "performance_status",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "performance_status"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "title": "Target Achievement Gauge",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 0,
+            "width": 4,
+            "height": 3
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    }
+  }
+}
