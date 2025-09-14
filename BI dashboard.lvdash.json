@@ -538,12 +538,12 @@
                   "datasetName": "012e5205",
                   "fields": [
                     {
-                      "name": "category",
-                      "expression": "`category`"
-                    },
-                    {
                       "name": "performance_tier",
                       "expression": "`performance_tier`"
+                    },
+                    {
+                      "name": "category",
+                      "expression": "`category`"
                     }
                   ],
                   "disaggregated": false
@@ -567,6 +567,53 @@
                     "type": "categorical"
                   },
                   "displayName": "performance_tier"
+                },
+                "color": {
+                  "fieldName": "performance_tier",
+                  "scale": {
+                    "type": "categorical",
+                    "mappings": [
+                      {
+                        "value": "Low Performer",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 8
+                        }
+                      },
+                      {
+                        "value": "Good Performer",
+                        "color": "#0FA0CA"
+                      },
+                      {
+                        "value": "Top Performer",
+                        "color": "#1C0CFD"
+                      },
+                      {
+                        "value": "Average Performer",
+                        "color": {
+                          "themeColorType": "visualizationColors",
+                          "position": 5
+                        }
+                      }
+                    ],
+                    "sort": {
+                      "by": "custom-order",
+                      "orderedValues": [
+                        "Top Performer",
+                        "Good Performer",
+                        "Average Performer",
+                        "Low Performer"
+                      ]
+                    }
+                  },
+                  "legend": {
+                    "hide": false,
+                    "hideTitle": true
+                  },
+                  "displayName": "performance_tier"
+                },
+                "label": {
+                  "show": false
                 }
               },
               "frame": {
@@ -642,7 +689,7 @@
                     "type": "quantitative",
                     "colorRamp": {
                       "mode": "scheme",
-                      "scheme": "rainbow"
+                      "scheme": "redyellowgreen"
                     },
                     "reverse": true
                   },

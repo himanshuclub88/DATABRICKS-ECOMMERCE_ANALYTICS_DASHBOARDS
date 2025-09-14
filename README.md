@@ -1,6 +1,6 @@
 # E-Commerce Analytics Pipeline: Test Report with RMarkdown Style
 
-**ECOMMERCE_ANALYTICS_DASHBOARDS → Spark ETL → Delta Tables → SQL Dashboards**
+**ECOMMERCE_ANALYTICS_DASHBOARDS → Spark ETL → Delta Tables → SQL → Dashboards**
 
 An end-to-end pipeline demonstrating ingestion from Unity Catalog Volumes through Spark transformations to Delta Lake tables, culminating in dashboard-ready SQL tables.
 
@@ -207,6 +207,11 @@ This e-commerce analytics pipeline serves as a comprehensive template for buildi
 5. **Schedule:** Set up Databricks Job for automated daily execution
 6. **Monitor:** Track execution through Jobs & Pipelines UI
 
+This pipeline serves for building production ETL workflows on Databricks.
+
 ---
 
-**Built with:** Databricks • Apache Spark • Delta Lake • Unity Catalog • SQL • Python          |
+![Pipeline](PIPELINE.png "PIPELINE")
+
+----
+**Built with:** Databricks • Apache Spark • Delta Lake • Unity Catalog • SQL • Python • Dashboard
